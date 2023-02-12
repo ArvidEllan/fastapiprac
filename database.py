@@ -8,3 +8,5 @@ engine = create_engine("postgresql://postgres:password@localhost/dbname")
     echo=True 
     
 Base = declarative_base()
+
+SessionLocal =sessionmaker(bind=engine)
