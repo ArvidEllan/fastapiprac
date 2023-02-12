@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import  Optional
 
 app=FastAPI()
 
@@ -25,3 +26,7 @@ def update_item(item_id:int,item:Item):
             'description':item.description,
             'price':item.price,
             'on_offer': item.on_offer}
+
+@app.get('/greet')
+def greet_optional_name(name:Optional[str]="user"):
+    return {"message":f"hello {name}"}
