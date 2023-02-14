@@ -7,4 +7,5 @@ Class Item(Base):
     id=Column(Integer,primary_key=True)
     name=Column(String(255),nullable=False,unique=True)
     description=Column(Text)
+    price=Column(Integer,nullable=False)
     on_offer=Column(Boolean,default=False)
